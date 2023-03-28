@@ -1,0 +1,40 @@
+<h3 class="text-center bg-dark text-white p-3 sticky-top">Food</h3>
+{{errMessage}}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <button class="col btn btn-dark m-3" (click)="getFoods()">All Foods</button>
+      </div>
+      <div class="row">
+        <button class="col btn btn-primary m-3" (click)="getWellFoods()">Well Foods</button>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="container w-80">
+        <h4 class="text-center text-white bg-secondary p-3 mt-3">{{title}}</h4>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-4" *ngFor="let food of foods">
+              <div class="card mt-5" style="width: 18rem;">
+                <img src="{{food.image}}" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">{{food.name}}</h5>
+                  <p class="card-text">💸 ${{food.price}}</p>
+                  <p class="card-text">👽 Expire: {{food.expireDate}}</p>
+                  <div class="card-text">
+                    <span *ngFor="let star of [].constructor(food.rating)">
+                      &#11088;
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
