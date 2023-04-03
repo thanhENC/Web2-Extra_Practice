@@ -65,7 +65,7 @@
           "options": {
             "browserTarget": "food-admin:build",
             "proxyConfig": "src/proxy.conf.json",
-            "port": 4001
+            "port": 8080
           },
           "configurations": {
             "production": {
